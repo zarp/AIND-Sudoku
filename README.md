@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Naked twin approach is used to reduce the number of possible solutions and, thus, simplify the problem. This is accomplished by looking for pairs of boxes that are located within the same unit(s) and have two and only two identical possible values A and B. While we don't know which value will end up in which box, we can be sure that both of them will be present in this pair of boxes, and as a consequence, cannot be present in any of the other boxes within the same unit(s). We can now use constraint propagation to loop over other boxes within the same unit(s) and remove both A and B from the list of possible values for each of those boxes.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Diagonal sudoku problem imposes additional constraints on the possible values of the boxes compared to "normal" sudoku - it requires each digit to occur once and only once in each of the two main diagonals. This means that each of the main diagonals forms a "unit". And all the digits within the same diagonal become "peers". As a result, we can use our existing code to solve the diagonal sudoku problem by modifying the definition of "unit" and "peer" to incorporate those additional constraints. Practically it means that  the definition of the "peer" (which previously included only boxes within the same row, column, or 3x3 square) now includes all boxes within the same main diagonal.
 
 ### Install
 
